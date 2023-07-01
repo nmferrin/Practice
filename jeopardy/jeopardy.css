@@ -1,0 +1,33 @@
+/* some colors you may find useful:
+  #115ff4
+  #060ce9
+  #28a200
+  #8d2ab5
+  #74119c
+*/
+#game-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#game-table th {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+#game-table td {
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#game-table td:hover {
+  background-color: #e0e0e0;
+}
+
+#game-table td[data-answer] {
+  font-weight: bold;
+}
