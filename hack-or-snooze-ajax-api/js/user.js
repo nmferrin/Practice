@@ -109,12 +109,50 @@ function saveUserCredentialsInLocalStorage() {
 
 function updateUIOnUserLogin() {
   console.debug("updateUIOnUserLogin");
+  hidePageComponents();
 
+  putStoriesOnPage();
   $allStoriesList.show();
 
   updateNavOnLogin();
+  generateUserProfile();
 }
-//4th todo
+//5 user profile
+function generateUserProfile() {
+  console.debug("generateUserProfile");
+
+  $("#profile-name").text(currentUser.name);
+  $("#profile-username").text(currentUser.username);
+  $("#profile-account-date").text(currentUser.createdAt.slice(0, 10));
+}
+
+
+//4th todo favorites
+function putFavoritesListOnPage() {
+  console.debug("putFavoritesListOnPage");
+
+  $favoritedStories.empty();
+
+  if (currentUser.favorites.length === 0) {
+    $favoritedStories.append("<h5>No favorites added!</h5>");
+  } else {
+    // loop through all of users favorites and generate HTML for them
+    for (let story of currentUser.favorites) {
+      const $story = generateStoryMarkup(story);
+      $favoritedStories.append($story);
+    }
+  }
+
+  $favoritedStories.show();
+}
+
+// function getFavoriteButtonHTML(story, user) {
+function getFavoriteButtonHTML(story, user) {
+  const isFavorite = true;
+  const buttonText = isFavorite ? "Unfavorite" : "Favorite";
+  return `<button class="favorite-button">${buttonText}</button>`;
+}
+// $storiesLists.on("click", ".favorite-button", toggleStoryFavorite);
 async function addFavorite(evt) {
   console.debug("addFavorite");
 
@@ -154,12 +192,29 @@ async function toggleStoryFavorite(evt) {
     $favoriteButton.text("Unfavorite");
   }
 }
-function getFavoriteButtonHTML(story, user) {
-  const isFavorite = user.isFavorite(story);
-  const buttonText = isFavorite ? "Unfavorite" : "Favorite";
-  return `<button class="favorite-button">${buttonText}</button>`;
-}
+
 $storiesLists.on("click", ".favorite-button", toggleStoryFavorite);
+$allStoriesList.on("click", ".favorite-button", toggleStoryFavorite);
+
+/** Put favorites list on page. */
+
+function putFavoritesListOnPage() {
+  console.debug("putFavoritesListOnPage");
+
+  $favoritedStories.empty();
+
+  if (currentUser.favorites.length === 0) {
+    $favoritedStories.append("<h5>No favorites added!</h5>");
+  } else {
+    // loop through all of users favorites and generate HTML for them
+    for (let story of currentUser.favorites) {
+      const $story = generateStoryMarkup(story);
+      $favoritedStories.append($story);
+    }
+  }
+
+  $favoritedStories.show();
+}
 
 // $storiesLists.on("click", ".star", addFavorite);
 

@@ -57,7 +57,8 @@
 <!-- area for stories (all stories, user stories, favorites) -->
 <section class="stories-container">
 
-  <form id="add-story" class="hidden"> 
+  <!-- new story form -->
+  <form id="add-story" class=""> 
     <div>
       <label for="create-author">author</label>
       <input id="create-author" required placeholder="author name">
@@ -80,7 +81,11 @@
   <!-- List of all stories -->
   <ol id="all-stories-list" class="stories-list"></ol>
 
- <ol id="favorited-stories"></ol>
+  <!-- favorited-stories -->
+ <ol id="favorited-stories" class="hidden stories-list"></ol>
+
+ <!-- List of stories by the user -->
+ <ol id="my-stories" class="hidden stories-list"></ol>
 
 </section>
 

@@ -6,15 +6,25 @@ const $body = $("body");
 
 const $storiesLoadingMsg = $("#stories-loading-msg");
 const $allStoriesList = $("#all-stories-list");
+const $favoritedStories = $("#favorited-stories")
+
 
 const $loginForm = $("#login-form");
 const $signupForm = $("#signup-form");
 const $newStoryForm = $("#add-story");
 
+const $ownStories = $("#my-story-btn");
+
+const $storiesLists = $(".stories-list");
+
+const $submitForm = $("#add-story");
+
 const $navLogin = $("#nav-login");
 const $navUserProfile = $("#nav-user-profile");
 const $navLogOut = $("#nav-logout");
 const $navSubmit = $("#nav-submit");
+
+const $userProfile = $("#user-profile");
 // const title = $("#create-title").val();
 // const url = $("#create-url").val();
 // const author = $("#create-author").val();

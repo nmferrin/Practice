@@ -38,7 +38,17 @@ function updateNavOnLogin() {
 // 2nd todo. handle new story submission click
 function navSubmitClick(evt) {
   console.debug("navSubmitClick", evt);
-  // hidePageComponents();
+  // hidePaComponents();
   $allStoriesList.show()
   $newStoryForm.show();
 }
+$navSubmit.on("click", navSubmitClick);
+
+//favorite tab
+function navFavoritesClick(evt) {
+  console.debug("navFavoritesClick", evt);
+  hidePageComponents();
+  putFavoritesListOnPage();
+}
+
+$body.on("click", "#nav-favorites", navFavoritesClick);
