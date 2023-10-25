@@ -1,10 +1,9 @@
-/* General typography */
-
 body {
   font-family: Arimo, sans-serif;
   margin: 8px 7.5vw;
-  background-image: linear-gradient(to right, #bee7ef 0%, #bb9be6 50%, #bee7ef 100%);  
-  align-items: center;
+  height: 100vh;
+  background-image: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(179, 243, 231) 100%);
+  font-size:larger;
 }
 
 h1 {
@@ -40,6 +39,12 @@ a:hover {
   flex-direction: column;
   align-self: center;
   background-color: #f6f6ef;
+
+}
+
+.stories-container{
+  height: calc(100vh - 100px);
+  overflow: scroll;
 }
 
 .hidden {

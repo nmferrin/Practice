@@ -2,16 +2,21 @@
 
 nav {
   display: flex;
-  background-color: #ff6600;
+  background-color: #5699b8;
   align-items: center;
-  padding: 20px 15px;
+  padding: 25px 20px;
   border-radius: 3px 3px 0 0;
-  /* margin-bottom: 20px; */
-
 }
 
 .navbar-brand {
   font-weight: bold;
+}
+
+.main-nav-links {
+  margin: 0 10px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-link {

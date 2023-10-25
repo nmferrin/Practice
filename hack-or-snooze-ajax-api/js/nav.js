@@ -35,20 +35,32 @@ function updateNavOnLogin() {
   $navUserProfile.text(`${currentUser.username}`).show();
 }
 
-// 2nd todo. handle new story submission click
+// Part of 2nd todo. Handle new story submission click. Reveal new story form.
 function navSubmitClick(evt) {
   console.debug("navSubmitClick", evt);
-  // hidePaComponents();
-  $allStoriesList.show()
+  hidePageComponents();
+  $allStoriesList.show();
   $newStoryForm.show();
 }
+
 $navSubmit.on("click", navSubmitClick);
 
-//favorite tab
+//6th to-do, pull up favorites list on click
+
 function navFavoritesClick(evt) {
   console.debug("navFavoritesClick", evt);
   hidePageComponents();
   putFavoritesListOnPage();
 }
+$body.on("click", "#fav-btn", navFavoritesClick);
 
-$body.on("click", "#nav-favorites", navFavoritesClick);
+//My stories nav functionality
+
+function navMyStories(evt) {
+  console.debug ("navMyStories", evt);
+  hidePageComponents();
+  putUserStoriesOnPage();
+  $ownStories.show();
+}
+
+$body.on("click", "#my-story-btn", navMyStories);
