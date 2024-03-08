@@ -28,3 +28,18 @@ INSERT INTO invoices (comp_Code, amt, paid, paid_date)
          ('apple', 200, false, null),
          ('apple', 300, true, '2018-01-01'),
          ('ibm', 400, false, null);
+
+CREATE TABLE industries (
+  code TEXT PRIMARY KEY,
+  industry TEXT NOT NULL
+);
+
+
+CREATE TABLE company_industries (
+  company_code TEXT NOT NULL,
+  industry_code TEXT NOT NULL,
+  PRIMARY KEY (company_code, industry_code),
+  FOREIGN KEY (company_code) REFERENCES companies(code),
+  FOREIGN KEY (industry_code) REFERENCES industries(code)
+);
+
